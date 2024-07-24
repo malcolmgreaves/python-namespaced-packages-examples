@@ -8,6 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         wget vim tree && \
     rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip
+
 # all project-related files live here
 WORKDIR /build/
 
@@ -16,7 +18,7 @@ COPY requirements-test.txt ./
 RUN pip install -r requirements-test.txt
 
 # copy project code & build configurations
-COPY src/ LICENSE pyproject.toml README.md ./
+COPY src/ README.md ./
 
 # build & install all packages => pack_g depends on all of myorg's namespaced packages
 WORKDIR /build/src/pack-g

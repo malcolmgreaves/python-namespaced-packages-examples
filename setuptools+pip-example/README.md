@@ -2,5 +2,5 @@
 
 To build the docker image, run:
 ```bash
-docker buildx build -f Dockerfile -t 'python-namespaced-packages-examples/setuptools+pip-example:$(git rev-parse HEAD)' .
+docker buildx build -f Dockerfile -t python_namespaced_packages_examples_setuptools_pip_example:$(git rev-parse HEAD) .
 ```
