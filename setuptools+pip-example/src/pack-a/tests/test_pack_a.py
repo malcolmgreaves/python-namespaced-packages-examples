@@ -1,5 +1,5 @@
-from myorg.pack_a.mymodule import a_hello_world
+from myorg.pack_a.mymodule import hello_world
 
 
 def test_package():
-    assert a_hello_world() == "Hello world from package A!"
+    assert hello_world() == "Hello world from package A!"
