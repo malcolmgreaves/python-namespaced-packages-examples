@@ -13,12 +13,15 @@ RUN pip install --upgrade pip
 # all project-related files live here
 WORKDIR /build/
 
+# copy documentation / general files
+COPY README.md ./
+
 # install testing tools
 COPY requirements-test.txt ./
 RUN pip install -r requirements-test.txt
 
 # copy project code & build configurations
-COPY src README.md .
+COPY src /build/src
 
 # build & install all packages => pack_g depends on all of myorg's namespaced packages
 WORKDIR /build/src/pack-g
