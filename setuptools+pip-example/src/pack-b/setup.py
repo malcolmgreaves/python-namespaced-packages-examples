@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from setuptools import find_namespace_packages, setup
+from setuptools import setup
 
 
 # For this trick, I thank:
@@ -12,5 +12,4 @@ pack_a_path: str = (root.parent / "pack-a").as_uri()
 if __name__ == "__main__":
     setup(
         install_requires=[f"myorg-pack-a @ {pack_a_path}"],
-        packages=find_namespace_packages(include=["myorg.*"]),
     )
