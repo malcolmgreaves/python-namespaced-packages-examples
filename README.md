@@ -1,5 +1,5 @@
 # python-namespaced-packages-examples
-Examples of Python projects using PEP-420 namespace packages. 
+Examples of Python projects using PEP-420 namespace packages.
 
 
 All examples implement the same namespaced package structure.
@@ -25,4 +25,3 @@ See the example project under the [`setuptools+pip-example/`](./setuptools+pip-e
 
 ### `poetry`
 See the example project under the [`poetry-example/`](./poetry-example) directory.
-
