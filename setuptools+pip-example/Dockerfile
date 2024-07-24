@@ -8,19 +8,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         wget vim tree && \
     rm -rf /var/lib/apt/lists/*
 
-# install dependencies first
+# copy project code & build configurations
+WORKDIR /build/
+COPY src/ LICENSE pyproject.toml README.md ./
+
+# build & install all packages => pack_g depends on all of myorg's namespaced packages
+WORKDIR /build/src/pack-g
+RUN pip install .
 WORKDIR /build
-
-# Workaround for gitlab CI's limitation in overriding WORKDIR and not allowing builds to specify the mount point:
-# https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#where-scripts-are-executed
-ENV WORKDIR "/install/infra-bionemo/"
-WORKDIR "${WORKDIR}"
-
-RUN pip install -r requirements-dev.txt
-RUN pip install -r requirements-test.txt
-RUN pip install -r requirements.txt
-
-# install project code
-COPY . /install/infra-bionemo
-# NOTE: --no-deps because the dependeices come from requirements.txt, which are already installed in a previous layer
-RUN pip install --no-deps -e .
