@@ -15,7 +15,7 @@ The entire namespaced package structure is:
 - `pack_c` depends only on `myorg.pack_b`
 - `pack_d` is an orphan
 - `pack_e` depends on `pack_a`
-- `pack_f` depends on `pack_e` and `pack_d`
+- `pack_f` depends on `pack_d` and `pack_e`
 - `pack_g` depends on all other packages (`pack_{a,b,c,d,e,f}`)
 
 ## Implementations with Different Python Build Tools
