@@ -22,6 +22,8 @@ COPY src README.md .
 
 # build & install all packages => pack_g depends on all of myorg's namespaced packages
 WORKDIR /build/src/pack-g
-RUN pip install .
+#RUN pip install .
+#
+#WORKDIR /build
 
-WORKDIR /build
+ENTRYPOINT '/bin/bash'
