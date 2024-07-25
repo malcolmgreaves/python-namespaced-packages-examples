@@ -1,10 +1,13 @@
 # python-namespaced-packages-examples
 Examples of Python projects using PEP-420 namespace packages.
 
-
 All examples implement the same namespaced package structure.
 Each example only differs in the build tools that are used.
 Each build tool is a PEP 517+518 compliant build backend.
+
+All examples use the ["native namespace packages"](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/#native-namespace-packages)
+layout. Additionally, each namespace package itself uses a `src/` directory layout for its packages:
+all Python code lives under `src/`.
 
 ## Namespaced Project Stucture
 
